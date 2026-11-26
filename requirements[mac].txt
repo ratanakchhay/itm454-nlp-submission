@@ -1,0 +1,16 @@
+paddleocr 
+paddlepaddle
+argparse
+transformers
+torch
+torchvision
+mlx # for functional calls into Apple Silicon (M1/M2/M3/M4/M5/M6)
+mlx-lm # for functional calls into Apple Silicon (M1/M2/M3/M4/M5/M6)
+mlx-vlm # for functional calls into Apple Silicon (M1/M2/M3/M4/M5/M6)
+# mlx[cuda12] - Running on Linux with CUDA
+# mlx[cpu] - Running on the CPU, not recommended
+tqdm
+fastapi[standard]
+pydantic
+jiwer # for cer and wer calculation
+"git+https://github.com/seanghay/khmer-neural-segmenter.git"

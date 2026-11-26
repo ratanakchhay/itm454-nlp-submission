@@ -1,0 +1,11 @@
+.venv
+.venv/
+
+data/
+playground/kd/__pycache__
+playground/kd/models
+
+*/.DS_Store
+
+public/
+public/*

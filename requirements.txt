@@ -1,0 +1,11 @@
+paddleocr 
+paddlepaddle
+argparse
+transformers
+torch
+torchvision
+tqdm
+fastapi[standard]
+pydantic
+jiwer # for cer and wer calculation
+"git+https://github.com/seanghay/khmer-neural-segmenter.git"
