@@ -11,6 +11,12 @@ This folder is for the pipeline of Knowledge Distillation of the VL models chose
 
 ---
 
+The architectural pipeline of the model distillation and fine-tuning:
+
+![Diagram of the Architecture](./assets/ITM%20454%20Final%20Project.png)
+
+---
+
 ## Folder Structure and How to Run
 
 ### Folder structure
@@ -31,7 +37,8 @@ playground/kd/
 ├── generation.py         # free generation + JSON extraction, shared by the inference scripts
 ├── student_inference.py  # student JSON on the test set (base or KD student)
 ├── eval.py               # acc / CER / WER / precision / recall / F1 against the gold JSON
-├── metrics/              # eval.py output, renamed per model (metrics-teacher.json, ...)
+├── inference.py          # running the inference of the model on a given image
+├── metrics/              # eval.py output, renamed per model (metrics-teacher.json, ...) 
 └── models/               # local model copies (git-ignored)
 
 data/                     # git-ignored, contains PII
@@ -60,8 +67,18 @@ How the pieces connect: `split.py` and `records.py` produce one record file per 
 
 All commands are run from `playground/kd/`.
 
+0. **Download the necessary dependencies** using requirements[mac].txt
+   ```
+   python3 -m venv .venv
+   source .venv/bin/activate
+
+   pip install -r requirements[mac].txt
+   ```
+
 1. **Download the models** to the paths that `model.py` expects:
    ```bash
+   mkdir models # if you have not yet instantiated 
+
    hf download mlx-community/Qwen3-VL-2B-Thinking-bf16 --local-dir models/qwen-2b-vl-thinking-bf16
    hf download mlx-community/Qwen3-VL-4B-Thinking-bf16 --local-dir models/qwen-4b-vl-thinking-bf16
    ```
